@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/next';
 import PotTicker from '@/components/PotTicker';
 import './globals.css';
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           </nav>
         </header>
         <main>{children}</main>
+        <Analytics />
       </body>
     </html>
   );

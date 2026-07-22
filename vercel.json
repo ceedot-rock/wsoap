@@ -8,5 +8,6 @@
       "path": "/api/ops/fill-and-start-tournament",
       "schedule": "0 23 * * *"
     }
-  ]
+  ],
+  "_note": "redeploy-3"
 }

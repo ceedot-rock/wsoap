@@ -4,6 +4,13 @@ import EnterTournamentForm from '@/components/EnterTournamentForm';
 import SpectatorFeed from '@/components/SpectatorFeed';
 import CharitySelectForm from '@/components/CharitySelectForm';
 
+// Reads live tournament/agent/leaderboard state on every request —
+// without this, Next.js caches the underlying Supabase fetch() calls
+// and this page can silently freeze on whatever data existed at build
+// time (e.g. an empty database), never showing new rows.
+export const dynamic = 'force-dynamic';
+
+
 export default async function TournamentDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const supabase = createServiceRoleClient();
